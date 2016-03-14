@@ -11,7 +11,7 @@ npm install webpack -g
 `
 配置Webpack:
 Webpack的构建过程需要一个配置文件,在根目录下建立文件*webpack.config.js*,配置大致如下：
-``
+`
 module.exports = {
     entry:[
         './js/entry.js'
@@ -35,12 +35,4 @@ module.exports = {
         extensions: ['', '.js', '.jsx']
     }
 }
-``
-
-
-
-
-
-
-
-在根目录下建立文件
+`
