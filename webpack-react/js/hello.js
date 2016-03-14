@@ -1,11 +1,14 @@
 import React from 'react';
 
-class HelloComponent extends React.Component{
+console.log(React);
+var a = 10;
+
+class Hello extends React.Component{
     render(){
-        (
+        return (
             <h1>hello!</h1>
         )
     }
 }
 
-export function fn(){};
+export {Hello};

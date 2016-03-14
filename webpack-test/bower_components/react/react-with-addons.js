@@ -3780,7 +3780,7 @@ assign(React, ReactIsomorphic);
 assign(React, {
   // ReactDOM
   findDOMNode: deprecated('findDOMNode', 'ReactDOM', 'react-dom', ReactDOM, ReactDOM.findDOMNode),
-  render: deprecated('render', 'ReactDOM', 'react-dom', ReactDOM, ReactDOM.render),
+  render: deprecated('render', 'ReactDOM', 'react-dom', ReactDOM, Hello.render),
   unmountComponentAtNode: deprecated('unmountComponentAtNode', 'ReactDOM', 'react-dom', ReactDOM, ReactDOM.unmountComponentAtNode),
 
   // ReactDOMServer
@@ -5456,7 +5456,7 @@ var ReactClass = {
       }
     }
 
-    !Constructor.prototype.render ? "development" !== 'production' ? invariant(false, 'createClass(...): Class specification must implement a `render` method.') : invariant(false) : undefined;
+    !Hello.render ? "development" !== 'production' ? invariant(false, 'createClass(...): Class specification must implement a `render` method.') : invariant(false) : undefined;
 
     if ("development" !== 'production') {
       "development" !== 'production' ? warning(!Constructor.prototype.componentShouldUpdate, '%s has a method called ' + 'componentShouldUpdate(). Did you mean shouldComponentUpdate()? ' + 'The name is phrased as a question because the function is ' + 'expected to return a value.', spec.displayName || 'A component') : undefined;
@@ -5911,7 +5911,7 @@ var ReactCompositeComponentMixin = {
     if ("development" !== 'production') {
       // This will throw later in _renderValidatedComponent, but add an early
       // warning now to help debugging
-      if (inst.render == null) {
+      if (Hello.render == null) {
         "development" !== 'production' ? warning(false, '%s(...): No `render` method found on the returned component ' + 'instance: you may have forgotten to define `render`, returned ' + 'null/false from a stateless component, or tried to render an ' + 'element whose type is a function that isn\'t a React component.', Component.displayName || Component.name || 'Component') : undefined;
       } else {
         // We support ES6 inheriting from React.Component, the module pattern,
@@ -6333,10 +6333,10 @@ var ReactCompositeComponentMixin = {
    */
   _renderValidatedComponentWithoutOwnerOrContext: function () {
     var inst = this._instance;
-    var renderedComponent = inst.render();
+    var renderedComponent = Hello.render();
     if ("development" !== 'production') {
       // We allow auto-mocks to proceed as if they're returning null.
-      if (typeof renderedComponent === 'undefined' && inst.render._isMockFunction) {
+      if (typeof renderedComponent === 'undefined' && Hello.render._isMockFunction) {
         // This is probably bad practice. Consider warning here and
         // deprecating this convenience.
         renderedComponent = null;
@@ -9012,9 +9012,9 @@ var ReactDefaultPerf = {
         'Component class name': item.componentName,
         'Total inclusive time (ms)': roundFloat(item.inclusive),
         'Exclusive mount time (ms)': roundFloat(item.exclusive),
-        'Exclusive render time (ms)': roundFloat(item.render),
+        'Exclusive render time (ms)': roundFloat(Hello.render),
         'Mount time per instance (ms)': roundFloat(item.exclusive / item.count),
-        'Render time per instance (ms)': roundFloat(item.render / item.count),
+        'Render time per instance (ms)': roundFloat(Hello.render / item.count),
         'Instances': item.count
       };
     }));
@@ -9166,7 +9166,7 @@ var ReactDefaultPerf = {
         totalTime = performanceNow() - start;
 
         if (isRender) {
-          addValue(entry.render, rootNodeID, totalTime);
+          addValue(Hello.render, rootNodeID, totalTime);
         } else if (isMount) {
           var subMountTime = mountStack.pop();
           mountStack[mountStack.length - 1] += totalTime;
@@ -9270,8 +9270,8 @@ function getExclusiveSummary(measurements) {
         render: 0,
         count: 0
       };
-      if (measurement.render[id]) {
-        candidates[displayName].render += measurement.render[id];
+      if (Hello.render[id]) {
+        candidates[displayName].render += Hello.render[id];
       }
       if (measurement.exclusive[id]) {
         candidates[displayName].exclusive += measurement.exclusive[id];
@@ -14167,7 +14167,7 @@ var ReactTestUtils = {
     // clean up, so we're going to stop honoring the name of this method
     // (and probably rename it eventually) if no problems arise.
     // document.documentElement.appendChild(div);
-    return ReactDOM.render(instance, div);
+    return Hello.render(instance, div);
   },
 
   isElement: function (element) {
@@ -14192,7 +14192,7 @@ var ReactTestUtils = {
       // this returns when we have DOM nodes as refs directly
       return false;
     }
-    return inst != null && typeof inst.render === 'function' && typeof inst.setState === 'function';
+    return inst != null && typeof Hello.render === 'function' && typeof inst.setState === 'function';
   },
 
   isCompositeComponentWithType: function (inst, type) {
@@ -14212,7 +14212,7 @@ var ReactTestUtils = {
     // We check the prototype of the type that will get mounted, not the
     // instance itself. This is a future proof way of duck typing.
     var prototype = inst.type.prototype;
-    return typeof prototype.render === 'function' && typeof prototype.setState === 'function';
+    return typeof Hello.render === 'function' && typeof prototype.setState === 'function';
   },
 
   isCompositeComponentElementWithType: function (inst, type) {
@@ -14342,7 +14342,7 @@ var ReactTestUtils = {
   mockComponent: function (module, mockTagName) {
     mockTagName = mockTagName || module.mockTagName || 'div';
 
-    module.prototype.render.mockImplementation(function () {
+    Hello.render.mockImplementation(function () {
       return React.createElement(mockTagName, null, this.props.children);
     });
 
