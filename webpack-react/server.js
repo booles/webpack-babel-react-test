@@ -5,9 +5,11 @@ var config = require('./webpack.config');
 new WebpackDevServer(webpack(config), {
   publicPath: config.output.publicPath,
   hot: true,
-  historyApiFallback: true,
-  port:3000
+  historyApiFallback: true
 }).listen(3000, 'localhost', function (err, result) {
-  if (err) console.log(err);
-  console.log('Listening at localhost:3000');
+  if (err) {
+    return console.log(err);
+  }
+
+  console.log('Listening at http://localhost:3000/');
 });
