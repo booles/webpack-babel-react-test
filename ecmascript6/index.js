@@ -1,4 +1,14 @@
+"use strict";
 
+/*import app from './app.js';
 
-var a = 10;
-export {a}
+console.log( app );*/
+
+var abc = 10;
+console.log(abc);
+
+var fn = function fn() {
+	console.log("hello");
+};
+
+fn();

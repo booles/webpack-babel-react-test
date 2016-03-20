@@ -1,11 +1,12 @@
+/*import app from './app.js';
 
-    //var index  = require('./index');
+console.log( app );*/
 
-import {a} from './index';
+let abc = 10;
+console.log( abc );
 
-console.log(a);
-var fn = (a) => {
-    console.log(a);
+var fn = () =>{
+	console.log("hello");
 }
 
-fn(a)
+fn();

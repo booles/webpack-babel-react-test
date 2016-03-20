@@ -44,44 +44,25 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(1);
+	//alert("欢迎来到妙味课堂");
+
+	//var app = require('./app.js');
+	//alert(app);
+	/*require(['./app.js'],function (app){
+		alert(app);
+	});*/
+
+	var app = __webpack_require__(1);
+	alert(app);
+
+
 
 
 /***/ },
 /* 1 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _index = __webpack_require__(2);
-
-	console.log(_index.a); /**
-	                        * Created by ���� on 2016/3/9.
-	                        */
-
-	//var index  = require('./index');
-
-	var fn = function fn(a) {
-	    console.log(a);
-	};
-
-	fn(_index.a);
-
-/***/ },
-/* 2 */
 /***/ function(module, exports) {
 
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	/**
-	 * Created by ���� on 2016/3/9.
-	 */
-
-	var a = 10;
-	exports.a = a;
+	module.exports = "妙味课堂欢迎您！123";
 
 /***/ }
 /******/ ]);
