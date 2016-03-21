@@ -1,5 +1,5 @@
 module.exports = {
-	entry:'./index.js',
+	entry:'./es6.js',
 	output:{
 		path:__dirname,
 		filename:'bundle.js'
@@ -9,6 +9,10 @@ module.exports = {
 			{
 				test:/\.css$/,
 				loader:'style!css!'
+			},
+			{
+				test:/\.js$/,
+				loader:'babel'
 			}
 		]
 	},
