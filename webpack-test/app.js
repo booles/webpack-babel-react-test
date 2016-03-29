@@ -1,1 +1,1 @@
-module.exports = "欢迎来到妙味课堂";
+module.exports = "欢迎来到妙味课堂呵呵呵";

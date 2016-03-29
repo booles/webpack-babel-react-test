@@ -1,4 +1,1 @@
-
-import app from './app.js';
-
-console.log( app );
+console.log(123);
