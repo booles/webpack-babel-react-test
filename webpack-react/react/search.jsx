@@ -53,7 +53,6 @@ var HelloComponent = React.createClass({
 					{arr}
 				</ul>
 			</div>
-			
 		)
 	},
 	searchHandle:function (){
