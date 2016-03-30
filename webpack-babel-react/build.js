@@ -65,7 +65,7 @@
 /* 1 */
 /***/ function(module, exports) {
 
-	module.exports = '热烈欢迎来到妙味课堂'
+	module.exports = '热烈欢迎来到妙味课堂！！！'
 
 /***/ },
 /* 2 */
