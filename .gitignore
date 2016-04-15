@@ -2,7 +2,16 @@
 /.idea/
 /ecmascript6/node_modules/
 /gulp-test/node_modules/
+
 /webpack-react/node_modules/
+/webpack-react/bower_components/
+
 /webpack-test/node_modules/
+
+/node-ppt/node_modules/
+
 /webpack-babel-react/node_modules/
-/webpack-babel-react/node_modules/
+/webpack-babel-react/bower_components/
+
+/webpack-react-miaov/node_modules/
+/webpack-react-miaov/bower_components/

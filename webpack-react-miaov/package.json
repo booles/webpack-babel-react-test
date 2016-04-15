@@ -7,7 +7,7 @@
     "babel-preset-react": "^6.5.0",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
-    "webpack": "^1.12.15"
+    "webpack": "^1.12.14"
   },
   "devDependencies": {
     "babel-core": "^6.7.2",
@@ -25,9 +25,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.react.config.js",
-    "start": "webpack-dev-server --port 5000 --progress --profile --colors --hot",
-    "react": "webpack-dev-server --port 5000 --progress --profile --colors --hot --config webpack.react.config.js",
-    "todo": "webpack-dev-server --port 5000 --progress --profile --colors --hot --config webpack.todo.config.js"
+    "start": "webpack-dev-server --port 3000 --progress --profile --colors --hot",
+    "react": "webpack-dev-server --port 3000 --progress --profile --colors --hot --config webpack.react.config.js"
   },
   "author": "",
   "license": "ISC"

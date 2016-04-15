@@ -2,8 +2,8 @@ var path = require('path');
 var htmlWebpackPlugin = require('html-webpack-plugin');
 
 var ROOT_PATH = path.resolve(__dirname); //当前文件路径
-var REACT_PATH = path.resolve(ROOT_PATH,'react'); //项目文件夹
-var REACT_BUILD_PATH = path.resolve(ROOT_PATH,'react_build'); //打包后的文件夹
+var REACT_PATH = path.resolve(ROOT_PATH,'todo'); //项目文件夹
+var REACT_BUILD_PATH = path.resolve(ROOT_PATH,'todo_build'); //打包后的文件夹
 
 var CSS_PATH = path.resolve(ROOT_PATH,'bower_components');
 
